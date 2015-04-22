@@ -1,0 +1,19 @@
+<%= form_for(@recipe) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="col-md-6 col-md-offset-3">
+    <h1>Add a New Recipe!</h1>
+    
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: "Compose new recipe..." %>
+    <br />
+    
+    <%= f.label :ingredients %>
+    <%= f.text_area :ingredients, placeholder: "list ingredients...", :cols => "30", :rows => "10" %>
+    
+    <%= f.label :directions %>
+    <%= f.text_area :directions, placeholder: "Add directions...", :cols => "50", :rows => "10" %>
+    
+    <%= f.submit "Post", class: "btn btn-primary" %>
+  </div>
+  
+<% end %>

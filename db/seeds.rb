@@ -25,3 +25,13 @@ User.create!(name: "Example User",
                activated: true,
                activated_at: Time.zone.now)
 end
+
+users = User.order(:created_at).take(6)
+50.times do
+  name = "Fake Recipe"
+  ingredients = Faker::Lorem.sentence(5)
+  directions = Faker::Lorem.sentence(5)
+  users.each { |user| user.recipes.create!(name: name,
+                                           ingredients: ingredients,
+                                           directions: directions) }
+end
