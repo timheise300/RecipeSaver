@@ -1,19 +1,16 @@
-<%= form_for(@recipe) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="col-md-6 col-md-offset-3">
-    <h1>Add a New Recipe!</h1>
-    
-    <%= f.label :name %>
-    <%= f.text_field :name, placeholder: "Compose new recipe..." %>
-    <br />
-    
-    <%= f.label :ingredients %>
-    <%= f.text_area :ingredients, placeholder: "list ingredients...", :cols => "30", :rows => "10" %>
-    
-    <%= f.label :directions %>
-    <%= f.text_area :directions, placeholder: "Add directions...", :cols => "50", :rows => "10" %>
-    
-    <%= f.submit "Post", class: "btn btn-primary" %>
-  </div>
-  
-<% end %>
+<li id="recipe-<%= recipe.id %>">
+  <%= link_to gravatar_for(recipe.user, size: 50), recipe.user %>
+  <span class="user"><%= link_to recipe.user.name, recipe.user %></span>
+  <span class="content">
+    <%= recipe.name %>
+    <%= recipe.ingredients %>
+    <%= recipe.directions %>
+  </span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(recipe.created_at) %> ago.
+    <% if current_user?(recipe.user) %>
+    <%= link_to "delete", recipe, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
+  </span>
+</li>
