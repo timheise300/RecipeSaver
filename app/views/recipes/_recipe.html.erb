@@ -3,6 +3,7 @@
   <span class="user"><%= link_to recipe.user.name, recipe.user %></span>
   <span class="content">
     <%= recipe.name %>
+    <%= image_tag recipe.picture.url if recipe.picture? %>
     <%= recipe.ingredients %>
     <%= recipe.directions %>
   </span>

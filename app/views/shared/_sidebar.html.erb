@@ -5,17 +5,16 @@
 
 <div id="wrapper">
   <div id="sidebar-wrapper" class="col-md-1">
-    <div id="sidebar">
+    <div id="btn-group-vertical" role="group" aria-label="...">
       <ul class="nav list-group">
         <li>
-          <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Your Recipes</a>
-          <span><%= link_to "Your Recipes", current_user, class: "icon-home icon-1x"%></span>
+          <%= link_to "Your Recipes", current_user, class: "btn btn-default"%>
         </li>
         <li>
-          <%= link_to "New Recipe", newRecipe_path, class: "icon-home icon-1x" %>
+          <%= link_to "New Recipe", newRecipe_path, class: "btn btn-default" %>
         </li>
         <li>
-          <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Sidebar Item 3</a>
+          <%= link_to "New Recipe", newRecipe_path, class: "btn btn-default" %>
         </li>
       </ul>
     </div>
