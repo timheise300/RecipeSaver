@@ -7,7 +7,7 @@ class Recipe < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 50}
   validates :ingredients, presence: true, length: { maximum: 1000}
   validates :directions, presence: true, length: { maximum: 2000}
-  validates :picture_size
+  validate :picture_size
   
   private
   
