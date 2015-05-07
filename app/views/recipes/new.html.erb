@@ -1,31 +1,34 @@
 <% provide(:title, 'Add a new Recipe') %>
 <div class="center jumbotron">
-<h1>Add a New Recipe</h1>
-  <%= form_for(@recipe, html: {multipart: true}) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
+<h2>Add a New Recipe</h2>
+  <div class="row">
     <div class="col-md-6 col-md-offset-3">
-
-      <%= f.label :name %>
-      <%= f.text_field :name, placeholder: "Compose new recipe..." %>
-      <br />
+    <%= form_for(@recipe, html: {multipart: true}) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
       
-      <span class="picture">
-        <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png' %>
-      </span>
+        <%= f.label :name %>
+        <%= f.text_field :name, placeholder: "Recipe Name...", class: 'form-control'  %>
+        <br />
 
-      <%= f.label :ingredients %>
-      <%= f.text_area :ingredients, placeholder: "list ingredients...", :cols => "30", :rows => "10" %>
-      <br />
+        <span class="picture">
+          <label>Upload a Picture: </label>
+          <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png', class: 'form-control'  %>
+          <br />
+        </span>
 
-      <%= f.label :directions %>
-      <%= f.text_area :directions, placeholder: "Add directions...", :cols => "50", :rows => "10" %>
-      <br />
+        <%= f.label :ingredients %>
+        <%= f.text_area :ingredients, placeholder: "list ingredients...", :cols => "30", :rows => "10", class: 'form-control'  %>
+        <br />
 
-      <%= f.submit "Create", class: "btn btn-primary" %>
+        <%= f.label :directions %>
+        <%= f.text_area :directions, placeholder: "Add directions...", :cols => "50", :rows => "10", class: 'form-control'  %>
+        <br />
+
+        <%= f.submit "Create", class: "btn btn-primary" %>
+      
+    <% end %>
     </div>
-
-  <% end %>
-  
+  </div>
   <script type="text/javascript">
     $('#micropost_picture').bind('change', function() {
       size_in_megabytes = this.files[0].size/1024/1024;
@@ -34,4 +37,3 @@
     }
   });
 </script>
-<div class="center jumbotron">

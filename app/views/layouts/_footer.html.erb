@@ -1,11 +1,23 @@
-<footer class="footer">
-  <small>
-    Recipe Saver app Created by Tim Heise
-  </small>
-  <nav>
-    <ul>
-      <li><%= link_to "About", about_path %></li>
-      <li><%= link_to "Help", help_path %></li>
-    </ul>
-  </nav>
-</footer>
+
+  <footer class="navbar navbar-fixed-bottom navbar-inverse">
+    <small>
+      Recipe Saver - Copyright 2015
+    </small>
+    <br />
+
+
+    <div nav class="navbar-nav navbar-right">
+      <a href="#">
+        <img title="Twitter" src="<%= asset_path( 'twitter.png' ) %>" alt="Twitter" width="25" height="25" />
+      </a>
+      <a href="#">
+        <img title="Pinterest" src="<%= asset_path( 'pinterest.png' ) %>" alt="Pinterest" width="25" height="25" />
+      </a> 
+      <a href="#">
+        <img title="Facebook" src="<%= asset_path( 'facebook.png' ) %>" alt="Facebook" width="25" height="25" />
+      </a> 
+      <a href="#">
+        <img title="RSS" src="<%= asset_path( 'Rss.png' ) %>" alt="RSS" width="25" height="25" />
+      </a>
+    </div>
+  </footer>

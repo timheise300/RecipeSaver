@@ -6,6 +6,7 @@ gem 'rails', '4.2.0'
 
 gem 'bootstrap-sass', '3.2.0.0'
 gem 'bootswatch-rails'
+gem 'jasny_bootstrap_extension_rails'
 
 gem 'bcrypt', '3.1.7'
 

@@ -1,22 +1,15 @@
-<br />
-<br />
-<br />
-<br />
-
-<div id="wrapper">
-  <div id="sidebar-wrapper" class="col-md-1">
-    <div id="btn-group-vertical" role="group" aria-label="...">
-      <ul class="nav list-group">
-        <li>
-          <%= link_to "Your Recipes", current_user, class: "btn btn-default"%>
-        </li>
-        <li>
-          <%= link_to "New Recipe", newRecipe_path, class: "btn btn-default" %>
-        </li>
-        <li>
-          <%= link_to "New Recipe", newRecipe_path, class: "btn btn-default" %>
-        </li>
-      </ul>
-    </div>
-  </div>
+<nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
+  <a class="navmenu-brand" href="#">Brand</a>
+  <ul class="nav navmenu-nav">
+    <li class="active"><a href="#">Home</a></li>
+    <li><a href="#">Link</a></li>
+    <li><a href="#">Link</a></li>
+  </ul>
+</nav>
+<div class="navbar navbar-default navbar-fixed-top">
+  <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
 </div>
