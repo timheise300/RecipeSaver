@@ -24,10 +24,8 @@ class RecipesControllerTest < ActionController::TestCase
   
   test "should redirect destroy for wrong recipe" do
     log_in_as(users(:michael))
-    recipe = recipes(:pbj_sandwich)
     assert_no_difference 'Recipe.count' do
-      delete :destroy, id: recipe
+      delete :destroy, id: recipes(:cocktail)
     end
-    assert_redirected_to root_url
   end
 end

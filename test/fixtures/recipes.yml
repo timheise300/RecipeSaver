@@ -29,10 +29,39 @@ scrambled_eggs:
   user: michael
   
 <% 30.times do |n| %>
-micropost_<%= n %>:
+recipe_<%= n %>:
   name: <%= "Fake Recipe" %>
   ingredients: <%= Faker::Lorem.sentence(5) %>
-  directions: <%= Faker::Lorem.sentence(5) %>
+  directions: <%= Faker::Lorem.sentence(20) %>
   created_at: <%= 42.days.ago %>
   user: michael
 <% end %>
+
+cocktail:
+  name: "Vodka Cocktail"
+  ingredients: "Vodka, More Vodka"
+  directions: "Pour the vodka, drink, repeat"
+  created_at: <%= 3.days.ago %>
+  user: archer
+
+lobster_bisque:
+  name: "Lobster Bisque"
+  ingredients: "Lobster, Cream, potatoes"
+  directions: "Throw it all in a pot, mix it up, eat it"
+  created_at: <%= 10.minutes.ago %>
+  user: archer
+  
+tomato_soup:
+  name: "Tomato Soup"
+  ingredients: "Tomatoes, Cream, Tobasco"
+  directions: "Boil and peel the tomatoes, crush them, mix with cream and tobasco"
+  created_at: <%= 3.hours.ago %>
+  user: archer
+  
+ham_rollups:
+  name: "Ham Rollups"
+  ingredients: "Hame, Pickles, Cream Cheese, Milk"
+  directions: "Mix the cream cheese and milk to make it more pliable, spread over ham, insert pickle, rollup"
+  created_at: <%= 3.years.ago %>
+  user: archer
+
