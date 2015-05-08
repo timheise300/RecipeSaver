@@ -19,13 +19,17 @@ gem 'fog', '1.23.0'
 gem 'will_paginate', '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 
+gem 'capistrano-rails'
+gem 'capistrano-bundler'
+gem 'capistrano-rbenv', '~> 2.0', require: false
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
 end
 
 group :production do
-  gem 'pg'
+  gem 'mysql2'
   gem 'rails_12factor'
 end
 
