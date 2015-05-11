@@ -8,6 +8,7 @@ class RecipesController < ApplicationController
       flash[:success] = "Recipe created!"
       redirect_to @user
     else
+      @feed_items = []
       render 'static_pages/home'
     end
   end

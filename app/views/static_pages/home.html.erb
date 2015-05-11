@@ -3,15 +3,42 @@
     <h1>Recipe Saver</h1>
     <p>
       This is a web app that allows you to store your recipes online and share them for others to see.  Create an         account and start saving your recipes today, or browse the recipes that have been uploaded by other users!
-      <br /><br />
-      <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-      <%= link_to "Browse Recipes", allRecipes_path, class: "btn btn-lg btn-primary" %>
     </p>
-  </div>
+    <br />
+    <%= link_to "Browse All Recipes", allRecipes_path, class: "btn btn-lg btn-primary" %>
+    <br /><br />
+      
+    <% if logged_in? %>
+      <div class="row">
+        <aside class="col-md-3">
+          <section class="user_info">
+            <%= render 'shared/user_info' %>
+            <br /><br />
+            <h4>Recipe Feed</h4>
+            <%= render 'shared/feed' %>
+          </section>
+        </aside>
+        <div class="col-md-8">
+          <h1>Recently Added Recipes</h1>
+          <ul>
+            <%= render @tenRecipes %>
+          </ul>
+        </div>
+      </div>
 
-  <div>
-    <h1>Recently Added Recipes</h1>
-    <ul>
-      <%= render @tenRecipes %>
-    </ul>
-  </div>
+        <br /><br />
+        <%= link_to "Browse Recipes", allRecipes_path, class: "btn btn-lg btn-primary" %>
+    <% else %>
+        <br /><br />
+        <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+        <%= link_to "Browse Recipes", allRecipes_path, class: "btn btn-lg btn-primary" %>
+    
+        <br /><br />
+        <div>
+          <h1>Recently Added Recipes</h1>
+          <ul>
+            <%= render @tenRecipes %>
+          </ul>
+        </div>
+    <% end %>
+
