@@ -1,0 +1,32 @@
+<% provide(:title, @recipe.name) %>
+<div class="center jumbotron">
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="recipe_info">
+        <h1>
+          <%= @recipe.name %>
+        </h1>
+      </section>
+    </aside>
+    <div class="col-md-8">
+    <br />
+    <span class="content">
+      <%= image_tag @recipe.picture.url if @recipe.picture? %>
+      <h3><b>Ingredients</b></h3>
+      <p><%= @recipe.ingredients %></p>
+      <br />
+      <h3><b>Directions</b></h3>
+      <p><%= @recipe.directions %></p>
+      <br />
+    </span>
+    <small>
+      <span class="timestamp">
+        Posted <%= time_ago_in_words(@recipe.created_at) %> ago.
+        <% if current_user?(@recipe.user) %>
+        <%= link_to "delete", @recipe, method: :delete,
+                                      data: { confirm: "Are you sure you want to delete this recipe?" } %>
+        <% end %>
+      </span>
+    </small>
+  </div>
+<div class="center jumbotron">
