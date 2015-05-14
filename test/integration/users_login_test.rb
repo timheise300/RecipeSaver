@@ -1,11 +1,11 @@
 require 'test_helper'
 
 class UsersLoginTest < ActionDispatch::IntegrationTest
-  
+
   def setup
     @user = users(:michael)
   end
-  
+
   test "login with invalid information" do
     get login_path
     assert_template 'sessions/new'
@@ -15,7 +15,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     get root_path
     assert flash.empty?
   end
-  
+
   test "login with valid information followed by logout" do
     get login_path
     post login_path, session: { email: @user.email, password: 'password' }
@@ -36,12 +36,12 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", logout_path,      count: 0
     assert_select "a[href=?]", user_path(@user), count: 0
   end
-  
+
   test "login with remembering" do
     log_in_as(@user, remember_me: '1')
     assert_not_nil cookies['remember_token']
   end
-  
+
   test "login without remembering" do
     log_in_as(@user, remember_me: '0')
     assert_nil cookies['remember_token']
