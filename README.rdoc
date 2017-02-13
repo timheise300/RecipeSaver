@@ -1,5 +1,11 @@
 == README
 
+This application is currently running at: https://lit-atoll-1502.herokuapp.com/
+NOTES:
+-Picture uploading is no longer supported
+-The UI layout is under construction due to possible new features
+-Currently, new user signup functionality is down due to email verifaction failure.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
